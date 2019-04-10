@@ -1,0 +1,89 @@
+<%= render "pages/nav" %>
+
+<div class="container">
+
+<div class="row" style="margin-bottom:5%;margin-left: 10%">
+    <div class="col-xs-10 col-sm-6 col-md-4 col-sm-offset-2 col-md-offset-3">
+    <%= form_tag "inscription", method: :post do %>
+      <fieldset>
+        <h2>Inscription :</h2>
+        <hr class="colorgraph">
+        <div class="form-group">
+    <label class="control-label col-sm-2" for="statut">Vous êtes:</label>
+        </div>
+        <div class="form-group">
+        <label class="radio-inline"><input type="radio" name="statut" value="Particulier">Particulier</label>
+    <label class="radio-inline"><input type="radio" name="statut" value="Professionnel">Professionnel</label>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-6" for="name">Nom :</label>
+        </div>
+
+        <div class="form-group">
+<input type="text"  name="name" placeholder=" Votre nom" class="form-control input-lg"/>        </div>
+
+
+        <div class="form-group">
+          <label class="control-label col-sm-6" for="tel">Téléphone :</label>
+        </div>
+        <div class="form-group">
+<input type="text" name="tel" placeholder=" 06 XX XX XX XX" class="form-control input-lg" />        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-6" for="ville">Ville :</label>
+        </div>
+        
+        <div class="form-group">
+<select id="inputState" class="form-control">
+            <option value="*" selected>Tout le Maroc</option>
+            <option value="Agadir"> Agadir</option>
+            <option value="Al Hoceïma"> Al Hoceïma</option>
+            <option value="Béni Mellal"> Béni Mellal</option>
+            <option value="El Jadida<"> El Jadida</option>
+            <option value="Errachidia"> Errachidia</option>
+            <option value="Fès"> Fès</option>
+            <option value="Kenitra"> Kénitra</option>
+            <option value="Khenifra"> Khénifra</option>
+            <option value="Khouribga"> Khouribga</option>
+            <option value="Larache"> Larache</option>
+            <option value="Marrakech"> Marrakech</option>
+            <option value="Meknès"> Meknès</option>
+            <option value="Nador"> Nador</option>
+            <option value="Ouarzazate"> Ouarzazate</option>
+            <option value="Oujda"> Oujda</option>
+            <option value="Rabat"> Rabat</option>
+            <option value="Safi"> Safi</option>
+            <option value="Settat"> Settat</option>
+            <option value="Salé"> Salé</option>
+            <option value="Tanger"> Tanger</option>
+            <option value="Taza"> Taza</option>
+            <option value="Tétouan"> Tétouan</option>
+            </select>        </div>
+
+            <div class="form-group">
+          <label class="control-label col-sm-6" for="email">E-mail :</label>
+        </div>
+
+        <div class="form-group">
+      <input type="text" name="email" placeholder=" nom@domaine.com"  class="form-control input-lg"/>
+      </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-6" for="password">Mot de passe :</label>
+        </div>
+
+        <div class="form-group">
+<input type="password" name="password" placeholder="Choisissez un mot de passe" class="form-control input-lg"/>
+      </div>
+        
+
+        <div class="form-group">
+        <input style="background-color: #FE980F;" type="submit" class="btn btn-lg btn-success btn-block" value="Créer un compte"> 
+      </div>
+        
+          Déjà inscrit ? <%= link_to 'Connectez-vous', login_path %>
+      </fieldset>
+<% end %>
+  </div>
+</div>
+</div>

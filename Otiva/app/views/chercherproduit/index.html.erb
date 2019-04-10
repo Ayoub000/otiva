@@ -1,0 +1,86 @@
+<% if session[:util_id] %>
+	<%= render partial: 'pages/nav2', locals: {util_courant: @util_courant} %>
+<% else %>
+	<%= render "pages/nav" %>
+<% end %>
+
+<div class="container">
+
+
+
+	
+		<h2 class="title text-center">NOS ANNONCES</h2>
+	</div>
+<% @produits.each do |produit| %>
+	<section>
+<div class="container">
+<div class="row">
+<div class="col-sm-3">
+	
+		
+		
+	</div>
+
+<div class="col-sm-9">
+	<div class="blog-post-area">
+		
+
+		<div class="single-blog-post">
+			<h3><%= produit.titre %></h3>
+			<div class="post-meta">
+				<ul>
+					
+					<li><i>Date</i>
+					<%
+						tab = produit.created_at.to_s.split(' ')
+					%>
+					<b><%=	tab[0] %></b>
+					</li>
+					<li><i>Heure</i>
+					 <b><%= tab[1] %></b>
+					</li>
+				</ul>
+				
+			</div>
+			<a href="">
+				<%= image_tag "/uploads/"+produit.photo %>
+				
+			</a>
+			<p><%= produit.description %></p>
+			<%= form_tag "chercherproduit/#{produit.id}", method: :get do  %>
+			<%= hidden_field_tag :id, produit.id %>
+
+	<div style="margin-left:40%;">		
+		<%= submit_tag "Plus", class:"z" %>	</div>
+ 					 <br/>
+			<% end %>
+		</div>
+		
+			
+		
+		
+	</div>
+</div>
+</div>
+</div>
+</section>
+	
+	<% end %>
+	<div class="container" style="margin-left:35%;margin-top: 2%;">
+		<div class="pagination-area">
+
+			<ul class="pagination">
+				<li><%= will_paginate @produits %></li>
+				<!-- <li><a href="" class="active">1</a></li>
+				<li><a href="">2</a></li>
+				<li><a href="">3</a></li>
+				<li><a href=""><i class="fa fa-angle-double-right"></i></a></li> -->
+			</ul>
+		</div>
+		</div>
+
+
+
+	
+
+  

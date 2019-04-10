@@ -1,0 +1,2 @@
+module ChercherproduitHelper
+end

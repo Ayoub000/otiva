@@ -1,0 +1,220 @@
+
+<% if session[:util_id] %>
+	<%= render partial: 'pages/nav2', locals: {util_courant: @util_courant} %>
+<% else %>
+	<%= render "pages/nav" %>
+<% end %>
+
+	<section id="slider">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<div id="slider-carousel" class="carousel slide" data-ride="carousel">
+						<ol class="carousel-indicators">
+							
+						</ol>
+						
+						<div class="carousel-inner">
+							<div class="item active">
+								<div class="col-sm-6">
+									<h1><span>O</span>TIVA</h1>
+									<h2>Annonces au Maroc</h2>
+									<p>Trouver la bonne affaire parmi <%= @produit.count %> annonces. </p>
+									<button type="button" class="btn btn-default get"><li><%= link_to 'Déposer ton annonce', annonce_path,class:"c" %></li></button>
+								</div>
+								<div class="col-sm-6">
+									<%= image_tag "images/home/logo3.png",class:"girl img-responsive" %>
+									
+								</div>
+							</div>	
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</section>
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="left-sidebar">
+						<h2>Categories</h2>
+						<div class="panel-group category-products" id="accordian">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
+											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+											INFORMATIQUE ET MULTIMEDIA
+										</a>
+									</h4>
+								</div>
+								<div id="sportswear" class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul>
+											<li><a href="chercherproduit?categorie=Telephones&ville=*&titre=&genre=offre">Télephones</a></li>
+											<li><a href="chercherproduit?categorie=Tablettes&ville=*&titre=&genre=offre">Tablettes </a></li>
+											<li><a href="chercherproduit?categorie=Ordinateurs portables&ville=*&titre=&genre=offre">Ordinateurs portables </a></li>
+											<li><a href="chercherproduit?categorie=Ordinateurs de bureau&ville=*&titre=&genre=offre">Ordinateurs de bureau</a></li>
+											<li><a href="chercherproduit?categorie=Jeux vidéo et Consoles&ville=*&titre=&genre=offre">Jeux video et console</a></li>
+											<li><a href="chercherproduit?categorie=Télévisions&ville=*&titre=&genre=offre">Télevisions</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordian" href="#mens">
+											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+											VEHICULES
+										</a>
+									</h4>
+								</div>
+								<div id="mens" class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul>
+											<li><a href="chercherproduit?categorie=Voitures&ville=*&titre=&genre=offre">Voitures</a></li>
+											<li><a href="chercherproduit?categorie=Motos&ville=*&titre=&genre=offre">Motos</a></li>
+											<li><a href="chercherproduit?categorie=Vélos&ville=*&titre=&genre=offre">Vélos</a></li>
+											<li><a href="chercherproduit?categorie=Bateaux&ville=*&titre=&genre=offre">Bateaux</a></li>
+											
+										</ul>
+									</div>
+								</div>
+							</div>
+							
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordian" href="#womens">
+											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+											HABILLEMENT ET BIEN ETRE
+										</a>
+									</h4>
+								</div>
+								<div id="womens" class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul>
+											<li><a href="#">Vêtements</a></li>
+											<li><a href="#">Chaussures</a></li>
+											<li><a href="#">Montres et Bijoux</a></li>
+											<li><a href="#">Sacs et accesoires</a></li>
+											<li><a href="#">Produits de beauté</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">IMMOBILIER</a></h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">ANIMAUX</a></h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">INSTRUMENTS DE MUSIQUE</a></h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">FILMS - LIVRES - MAGAZINES</a></h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">VOYAGE</a></h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">MEUBLES ET DECORATIONS</a></h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">EMPLOI ET SERVICES </a></h4>
+								</div>
+							</div>
+						</div><!--/category-products-->
+					
+						<div class="brands_products"><!--brands_products-->
+							<h2>Ville</h2>
+							<div class="brands-name">
+								<ul class="nav nav-pills nav-stacked">
+									<li><a href="chercherproduit?categorie=&ville=Casablanca&titre=&genre=offre"> Casablanca </a></li>
+									<li><a href="chercherproduit?categorie=&ville=Agadir&titre=&genre=offre"> Agadir</a></li>
+									<li><a href="chercherproduit?categorie=&ville=Kenitra&titre=&genre=offre"> Kénitra</a></li>
+									<li><a href="chercherproduit?categorie=&ville=Rabat&titre=&genre=offre"> Rabat</a></li>
+									<li><a href="chercherproduit?categorie=&ville=Marrakech&titre=&genre=offre"> Marrakech</a></li>
+									<li><a href="chercherproduit?categorie=&ville=Fès&titre=&genre=offre">Fès</a></li>
+									<li><a href="chercherproduit?categorie=&ville=Safi&titre=&genre=offre">Safi</a></li>
+									<li><a href="chercherproduit?categorie=&ville=Tanger&titre=&genre=offre">Tanger</a></li>
+									
+								</ul>
+							</div>
+						</div><!--/brands_products-->
+						
+					
+					</div>
+				</div>
+				
+				<div class="col-sm-9 padding-right">
+					<div class="features_items"><!--features_items-->
+						<h2 class="title text-center">NOS ANNONCES</h2>
+<% @produit.take(6).each do |prod| %>
+
+<div class="col-sm-4">
+	<div class="product-image-wrapper">
+		<div class="single-products">
+				<div class="productinfo text-center">
+				<div style="width: 240px;height:200px;"><%= image_tag "/uploads/"+ prod.photo %></div>
+					<h2><%= prod.prix %> DH</h2>
+					<p><%= prod.titre %></p>
+					<a class="btn btn-default add-to-cart">
+					<i class="fa fa-shopping-cart"></i>
+					Plus
+					</a>
+				</div>
+				<div class="product-overlay">
+					<div class="overlay-content">
+						<h2><%= prod.prix %></h2>
+						<p><%= prod.titre %></p>
+						<%= form_tag "chercherproduit/#{prod.id}?id=#{}&commit=Plus", method: :get do  %>
+						
+						<%= submit_tag "Plus", class:"z" %>
+					</div>
+
+							
+						
+
+						<% end %>
+					
+				</div>
+		</div>
+	
+
+	</div>
+</div>
+
+<% next %>
+
+
+</div>
+<% end %>
+
+
+</div>
+</div>
+</div>
+</section>
+	
+	
+	
+
+  

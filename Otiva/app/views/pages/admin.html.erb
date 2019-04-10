@@ -1,0 +1,70 @@
+
+<% if session[:util_id] %>
+	<%= render partial: 'pages/nav2', locals: {util_courant: @util_courant} %>
+<% else %>
+	<%= render "pages/nav" %>
+<% end %>
+	<section id="cart_items">
+		<div class="container">
+			
+			<div class="table-responsive cart_info">
+				<table class="table table-condensed">
+					<thead>
+						<tr class="cart_menu">
+							<td class="image" style="margin-right: 70px;">Produit</td>
+							<td class="description">Titre</td>
+							<td class="price">Catégorie</td>
+							<td class="quantity">Description</td>
+							<td class="total">Prix</td>
+							<td class="total"></td>
+							<td class="total"></td>
+
+							<td></td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<% @produit.each do |prod| %>
+							<td class="cart_product">
+								<div style="width: 150px;height: 110px;margin-right: 20px;"> <%= image_tag "/uploads/"+ prod.photo,:class => "picture" %></div>
+							</td>
+
+							<td class="cart_quantity" style="width:150px;">
+								<p><%= prod.titre %></p>
+							</td>
+
+							<td class="cart_price" style="width:150px;">
+								<p><%= prod.categorie %></p>
+							</td>
+
+							<td class="cart_description" style="width:200px;">
+								<p><%= prod.description %></p>
+							</td>
+
+							<td class="cart_total">
+								<p class="cart_total_price" style="width:120px;font-size: 1.3em;"><%= prod.prix %> DH</p>
+							</td>
+
+							<td class="cart_total" style="width:80px;">
+								<%= form_tag "modifier_annonce", method: :get do %>
+								<%= hidden_field_tag "id", prod.id %>
+							<input type="submit" value="Modifier" class="z" style="width:80px;margin-top: 15px;" %>						</td>
+								<% end %>
+							<td class="cart_delete" style="width:95px;">
+								<%= form_tag "admin", method: :delete do %>
+								<%= hidden_field_tag "id", prod.id %>
+							<input type="submit" value="Supprimer" class="z" style="width:90px;" %>
+							</td>
+							<% end %>
+
+							
+						</tr>
+			<% end %>
+						
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section> <!--/#cart_items-->
+
+	

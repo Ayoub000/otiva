@@ -1,0 +1,138 @@
+<div class="header-bottom">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-9">
+						<div  style="margin-right: 5%;" class="navbar-header">
+							
+						<%= image_tag "images/logo.png",height:100,width:100 %>
+
+						</div>
+						<br/><br/>
+						<div class="mainmenu pull-left">
+							<ul class="nav navbar-nav collapse navbar-collapse">
+								<li><a><%= link_to 'Accueil', root_path %></a></li>
+								  <li><a><%= link_to 'Mes annonces', login_path %></a></li>
+								  <li><a><%= link_to 'A propos', qui_path %></a></li>
+								  <li id="trait"><a><%= link_to 'Se connecter', login_path %></a></li>
+								
+							</ul>
+						</div>
+					</div>
+					<br/><br/>
+					<div class="col-sm-3">
+						<div class="search_box pull-right">
+
+							<li><%= link_to 'Déposer une annonce', annonce_path,class:"d" %></li>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/header-bottom-->
+	</header><!--/header-->
+	<br/>
+<%= form_tag "chercherproduit", method: :get do  %>
+
+<!-- <input type="text" name="text" id="text" class="form-control input-lg" style="width: 20%; display: inline-block; margin-left: 20%;" placeholder="Que Recherchez-Vous ?"> -->
+<div id="text" style="width: 20%; display: inline-block; margin-left: 20%;">
+<%= text_field_tag :titre, params[:titre], class: 'form-control input-lg' %>	
+</div>
+
+
+<select name="categorie" class="form-control input-lg" style="width: 20%; display: inline-block;" id="inputState" class="form-control">
+	<option value="" selected>Toutes les catégories</option>
+	<option style="background-color:#dcdcc3; font-weight: bold;" value="5000">-- INFORMATIQUE ET MULTIMEDIA --</option>
+	<option value="Telephones">Téléphones</option>
+	<option value="Tablettes">Tablettes</option>
+	<option value="Ordinateurs portables">Ordinateurs portables</option>
+	<option value="Ordinateurs de bureau">Ordinateurs de bureau</option>
+	<option value="Accessoires informatique et Gadgets">Accessoires informatique et Gadgets</option>
+	<option value="Jeux vidéo et Consoles">Jeux vidéo et Consoles</option>
+	<option value="Appareils photo et Caméras70">Appareils photo et Caméras</option>
+	<option value="Télévisions">Télévisions</option>
+	<option value="Image & Son">Image &amp; Son</option>
+	<option style="background-color:#dcdcc3; font-weight: bold;" value="2000">-- VEHICULES --</option>
+	<option value="Voitures">Voitures</option>
+	<option value="Motos">Motos</option>
+	<option value="Vélos">Vélos</option>
+	<option value="Véhicules Professionnels">Véhicules Professionnels</option>
+	<option value="Bateaux">Bateaux</option>
+	<option value="Pièces et Accessoires pour véhicules">Pièces et Accessoires pour véhicules</option>
+	<option style="background-color:#dcdcc3; font-weight: bold;" value="1000">-- IMMOBILIER --</option>
+	<option value="Appartements">Appartements</option>
+	<option value="Maisons et Villas">Maisons et Villas</option>
+	<option value="Bureaux et Plateaux">Bureaux et Plateaux</option>
+	<option value="Magasins, Commerces et Locaux industriels">Magasins, Commerces et Locaux industriels</option>
+	<option value="Terrains et Fermes">Terrains et Fermes</option>
+	<option value="Locations de vacances">Locations de vacances</option>
+	<option value="Colocations">Colocations</option>
+	<option value="Autre Immobilier">Autre Immobilier</option>
+	<option style="background-color:#dcdcc3; font-weight: bold;" value="3000">-- POUR LA MAISON ET JARDIN --</option>
+	<option value="Electroménager et Vaisselles">Electroménager et Vaisselles</option>
+	<option value="Meubles et Décoration">Meubles et Décoration</option>
+	<option value="Jardin et Outils de bricolage">Jardin et Outils de bricolage</option>
+	<option style="background-color:#dcdcc3; font-weight: bold;" value="8000">-- HABILLEMENT ET BIEN ETRE --</option>
+	<option value="Vêtements">Vêtements</option>
+	<option value="Chaussures">Chaussures</option>
+	<option value="Montres et Bijoux">Montres et Bijoux</option>
+	<option value="Sacs et Accessoires">Sacs et Accessoires</option>
+	<option value="3030">Vêtements pour enfant et bébé</option>
+	<option value="3130">Equipements pour enfant et bébé</option>
+	<option value="3070">Produits de beauté</option>
+	<option style="background-color:#dcdcc3; font-weight: bold;" value="4000">-- LOISIRS ET DIVERTISSEMENT --</option>
+	<option value="4010">Sports et Loisirs</option>
+	<option value="Animaux">Animaux</option>
+	<option value="4070">Instruments de Musique</option>
+	<option value="4060">Art et Collections</option>
+	<option value="4050">Voyages et Billetterie</option>
+	<option value="4040">Films, Livres, Magazines</option>
+	<option style="background-color:#dcdcc3; font-weight: bold;" value="6000">-- EMPLOI ET SERVICES --</option>
+	<option value="6010">Offres d'emploi</option>
+	<option value="6020">Demandes d'emploi</option>
+	<option value="Stages">Stages</option>
+	<option value="Services">Services</option>
+	<option value="Cours et Formations">Cours et Formations</option>
+	<option style="background-color:#dcdcc3; font-weight: bold;" value="9000">-- ENTREPRISES --</option>
+	<option value="6100">Business et Affaires commerciales</option>
+	<option value="6090">Matériels Professionnels</option>
+	<option value="6120">Stocks et Vente en gros</option>
+	
+
+
+</select>
+
+<select name="ville" class="form-control input-lg" style="width: 20%; display: inline-block;" id="inputState" class="form-control">
+<option value="*" selected>Tout le Maroc</option>
+<option value="Agadir"> Agadir</option>
+<option value="Al Hoceïma"> Al Hoceïma</option>
+<option value="Béni Mellal"> Béni Mellal</option>
+<option value="El Jadida<"> El Jadida</option>
+<option value="Errachidia"> Errachidia</option>
+<option value="Fès"> Fès</option>
+<option value="Kenitra"> Kénitra</option>
+<option value="Khenifra"> Khénifra</option>
+<option value="Khouribga"> Khouribga</option>
+<option value="Larache"> Larache</option>
+<option value="Marrakech"> Marrakech</option>
+<option value="Meknès"> Meknès</option>
+<option value="Nador"> Nador</option>
+<option value="Ouarzazate"> Ouarzazate</option>
+<option value="Oujda"> Oujda</option>
+<option value="Rabat"> Rabat</option>
+<option value="Safi"> Safi</option>
+<option value="Settat"> Settat</option>
+<option value="Salé"> Salé</option>
+<option value="Tanger"> Tanger</option>
+<option value="Taza"> Taza</option>
+<option value="Tétouan"> Tétouan</option>
+</select>
+<div class="form-group" style="margin-left: 20%">
+        <label><input name="genre" type="radio" value="offre" checked="checked">Offre</label>
+    &nbsp;&nbsp;
+      <label><input name="genre" type="radio" value="demande">Demande</label>
+        
+
+<li style="margin-left:46%;margin-top: 2%;display: inline-block;"><%= submit_tag "Rechercher", class:"z" %></li></div>
+
+<% end %>
+
+<br/><br/>

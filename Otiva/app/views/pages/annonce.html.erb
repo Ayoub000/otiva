@@ -1,0 +1,240 @@
+<% if session[:util_id] %>
+  <%= render partial: 'pages/nav2', locals: {util_courant: @util_courant} %>
+<% else %>
+  <%= render "pages/nav" %>
+<% end %>
+
+<div class="container">
+
+<div class="row" style="margin-bottom:5%;margin-left: 10%">
+    <div class="col-xs-10 col-sm-6 col-md-4 col-sm-offset-2 col-md-offset-3">
+      <%= form_tag({:action => "creation_ann"},:multipart => true) do %>
+      <fieldset>
+        <h2>Créer annonce :</h2>
+        <hr class="colorgraph">
+        <div class="form-group">
+            <label class="control-label col-sm-6" for="categorie">Catégorie :</label>
+        </div>
+        <div class="form-group">
+        <select id="inputState" name="categorie" class="form-control">
+          <option value="" selected>Toutes les catégories</option>
+  <option style="background-color:#dcdcc3; font-weight: bold;" value="5000">-- INFORMATIQUE ET MULTIMEDIA --</option>
+  <option value="Telephones">Téléphones</option>
+  <option value="Tablettes">Tablettes</option>
+  <option value="Ordinateurs portables">Ordinateurs portables</option>
+  <option value="Ordinateurs de bureau">Ordinateurs de bureau</option>
+  <option value="Accessoires informatique et Gadgets">Accessoires informatique et Gadgets</option>
+  <option value="Jeux vidéo et Consoles">Jeux vidéo et Consoles</option>
+  <option value="Appareils photo et Caméras70">Appareils photo et Caméras</option>
+  <option value="Télévisions">Télévisions</option>
+  <option value="Image & Son">Image &amp; Son</option>
+  <option style="background-color:#dcdcc3; font-weight: bold;" value="2000">-- VEHICULES --</option>
+  <option value="Voitures">Voitures</option>
+  <option value="Motos">Motos</option>
+  <option value="Vélos">Vélos</option>
+  <option value="Véhicules Professionnels">Véhicules Professionnels</option>
+  <option value="Bateaux">Bateaux</option>
+  <option value="Pièces et Accessoires pour véhicules">Pièces et Accessoires pour véhicules</option>
+  <option style="background-color:#dcdcc3; font-weight: bold;" value="1000">-- IMMOBILIER --</option>
+  <option value="Appartements">Appartements</option>
+  <option value="Maisons et Villas">Maisons et Villas</option>
+  <option value="Bureaux et Plateaux">Bureaux et Plateaux</option>
+  <option value="Magasins, Commerces et Locaux industriels">Magasins, Commerces et Locaux industriels</option>
+  <option value="Terrains et Fermes">Terrains et Fermes</option>
+  <option value="Locations de vacances">Locations de vacances</option>
+  <option value="Colocations">Colocations</option>
+  <option value="Autre Immobilier">Autre Immobilier</option>
+  <option style="background-color:#dcdcc3; font-weight: bold;" value="3000">-- POUR LA MAISON ET JARDIN --</option>
+  <option value="Electroménager et Vaisselles">Electroménager et Vaisselles</option>
+  <option value="Meubles et Décoration">Meubles et Décoration</option>
+  <option value="Jardin et Outils de bricolage">Jardin et Outils de bricolage</option>
+  <option style="background-color:#dcdcc3; font-weight: bold;" value="8000">-- HABILLEMENT ET BIEN ETRE --</option>
+  <option value="Vêtements">Vêtements</option>
+  <option value="Chaussures">Chaussures</option>
+  <option value="Montres et Bijoux">Montres et Bijoux</option>
+  <option value="Sacs et Accessoires">Sacs et Accessoires</option>
+  <option value="3030">Vêtements pour enfant et bébé</option>
+  <option value="3130">Equipements pour enfant et bébé</option>
+  <option value="3070">Produits de beauté</option>
+  <option style="background-color:#dcdcc3; font-weight: bold;" value="4000">-- LOISIRS ET DIVERTISSEMENT --</option>
+  <option value="4010">Sports et Loisirs</option>
+  <option value="Animaux">Animaux</option>
+  <option value="4070">Instruments de Musique</option>
+  <option value="4060">Art et Collections</option>
+  <option value="4050">Voyages et Billetterie</option>
+  <option value="4040">Films, Livres, Magazines</option>
+  <option style="background-color:#dcdcc3; font-weight: bold;" value="6000">-- EMPLOI ET SERVICES --</option>
+  <option value="6010">Offres d'emploi</option>
+  <option value="6020">Demandes d'emploi</option>
+  <option value="Stages">Stages</option>
+  <option value="Services">Services</option>
+  <option value="Cours et Formations">Cours et Formations</option>
+  <option style="background-color:#dcdcc3; font-weight: bold;" value="9000">-- ENTREPRISES --</option>
+  <option value="6100">Business et Affaires commerciales</option>
+  <option value="6090">Matériels Professionnels</option>
+  <option value="6120">Stocks et Vente en gros</option>
+  <option style="background-color:#dcdcc3; font-weight: bold;" value="7000">-- Autres --</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+                  <label class="control-label col-sm-6" for="toi">Type d'annonce :</label>
+        </div>
+
+        <div class="form-group">
+        <label class="radio-inline"><input type="radio" name="genre" value="offre">Offre</label>
+    <label class="radio-inline"><input type="radio" name="genre" value="demande">Demande</label>
+        </div>
+
+        <div class="form-group">
+                  <label class="control-label col-sm-6" for="ville">Ville :</label>
+        </div>
+        <div class="form-group">
+        <select id="inputState" name="ville" class="form-control">
+            <option value="*" selected>Tout le Maroc</option>
+            <option value="Agadir"> Agadir</option>
+            <option value="Al Hoceïma"> Al Hoceïma</option>
+            <option value="Béni Mellal"> Béni Mellal</option>
+            <option value="El Jadida<"> El Jadida</option>
+            <option value="Errachidia"> Errachidia</option>
+            <option value="Fès"> Fès</option>
+            <option value="Kenitra"> Kénitra</option>
+            <option value="Khenifra"> Khénifra</option>
+            <option value="Khouribga"> Khouribga</option>
+            <option value="Larache"> Larache</option>
+            <option value="Marrakech"> Marrakech</option>
+            <option value="Meknès"> Meknès</option>
+            <option value="Nador"> Nador</option>
+            <option value="Ouarzazate"> Ouarzazate</option>
+            <option value="Oujda"> Oujda</option>
+            <option value="Rabat"> Rabat</option>
+            <option value="Safi"> Safi</option>
+            <option value="Settat"> Settat</option>
+            <option value="Salé"> Salé</option>
+            <option value="Tanger"> Tanger</option>
+            <option value="Taza"> Taza</option>
+            <option value="Tétouan"> Tétouan</option>
+            </select>
+        </div>
+        
+        
+
+        <div class="form-group">
+             <label class="control-label col-sm-6" for="titre">Titre:</label>
+        </div>
+        
+        <div class="form-group">
+             <input type="text" class="form-control" id="titre" name="titre" >
+        </div>
+
+        <div class="form-group">
+             <label class="control-label col-sm-6" for="description">Texte de l'annonce:</label>
+
+        </div>
+
+        <div class="form-group">
+            <textarea class="form-control" rows="5" name="description" id="texte_annonce"></textarea>
+
+        </div>
+
+        <div class="form-group">
+             <label class="control-label col-sm-6" for="prix">Prix:</label>
+        </div>
+        <div class="form-group">
+             <input type="text" class="form-control" id="prix" name="prix" >
+        </div>
+        <div class="form-group">
+             <label class="control-label col-sm-6" for="titre">Photos:</label>
+        </div>
+          
+       
+          <%= file_field_tag 'photo' %>
+        
+          
+      </fieldset>
+      <br/>
+      
+      <% if !session[:util_id] %>
+        <fieldset>
+        <h2>Vos informations personnelles :</h2>
+        <hr class="colorgraph">
+        <div class="form-group">
+    <label class="control-label col-sm-2" for="statut">Vous êtes:</label>
+        </div>
+        <div class="form-group">
+        <label class="radio-inline"><input type="radio" name="statut" value="Particulier">Particulier</label>
+    <label class="radio-inline"><input type="radio" name="statut" value="Professionnel">Professionnel</label>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-6" for="name">Nom :</label>
+        </div>
+
+        <div class="form-group">
+<input type="text"  name="name" placeholder=" Votre nom" class="form-control input-lg"/>        </div>
+
+
+        <div class="form-group">
+          <label class="control-label col-sm-6" for="tel">Téléphone :</label>
+        </div>
+        <div class="form-group">
+<input type="text" name="tel" placeholder=" 06 XX XX XX XX" class="form-control input-lg" />        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-6" for="ville">Ville :</label>
+        </div>
+        
+        <div class="form-group">
+<select id="inputState" class="form-control">
+            <option value="*" selected>Tout le Maroc</option>
+            <option value="Agadir"> Agadir</option>
+            <option value="Al Hoceïma"> Al Hoceïma</option>
+            <option value="Béni Mellal"> Béni Mellal</option>
+            <option value="El Jadida<"> El Jadida</option>
+            <option value="Errachidia"> Errachidia</option>
+            <option value="Fès"> Fès</option>
+            <option value="Kenitra"> Kénitra</option>
+            <option value="Khenifra"> Khénifra</option>
+            <option value="Khouribga"> Khouribga</option>
+            <option value="Larache"> Larache</option>
+            <option value="Marrakech"> Marrakech</option>
+            <option value="Meknès"> Meknès</option>
+            <option value="Nador"> Nador</option>
+            <option value="Ouarzazate"> Ouarzazate</option>
+            <option value="Oujda"> Oujda</option>
+            <option value="Rabat"> Rabat</option>
+            <option value="Safi"> Safi</option>
+            <option value="Settat"> Settat</option>
+            <option value="Salé"> Salé</option>
+            <option value="Tanger"> Tanger</option>
+            <option value="Taza"> Taza</option>
+            <option value="Tétouan"> Tétouan</option>
+            </select>        </div>
+
+            <div class="form-group">
+          <label class="control-label col-sm-6" for="email">E-mail :</label>
+        </div>
+
+        <div class="form-group">
+      <input type="text" name="email" placeholder=" nom@domaine.com"  class="form-control input-lg"/>
+      </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-6" for="password">Mot de passe :</label>
+        </div>
+
+        <div class="form-group">
+<input type="password" name="password" placeholder="Choisissez un mot de passe" class="form-control input-lg"/>
+      </div>
+
+      </fieldset>
+      <% end %>
+        
+      
+      <%= submit_tag "Déposer annonce", class: "btn btn-lg btn-success btn-block" %>
+       <!--  </div>  -->
+      <% end %>
+  </div>
+</div>
+</div>
+
+</div>

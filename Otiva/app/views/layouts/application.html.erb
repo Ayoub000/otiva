@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Otiva</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+
+
+		
+	<footer id="footer"><!--Footer-->
+		
+		<div class="footer-widget" style="margin-left: 30%;">
+			<div class="container">
+				<div class="row">
+				<div class="col-sm-2">
+						<div class="single-widget">
+							<%= image_tag "images/logo.png",height:100,width:100 %>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>Commençons</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><%= link_to 'Accueil', root_path,class:"d" %></li>
+		                        <li><%= link_to 'Connexion', login_path,class:"d" %></li>
+		                    </ul>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>A propos de nous</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><%= link_to 'Qui sommes-nous ?', qui_path,class:"d" %></li>
+		                        
+		                    </ul>
+						</div>
+					</div>
+					
+					
+				</div>
+			</div>
+		</div>
+		
+		<div class="footer-bottom">
+			<div class="container">
+				<div class="row">
+					<p class="pull-left">Copyright © 2018 OTIVA Inc. All rights reserved.</p>
+				</div>
+			</div>
+		</div>
+		
+	</footer>	
+</body>
+</html>
